@@ -33,25 +33,57 @@ It is intended for running automatic test of Literate CoffeeScript against the C
 Running tests against the spec
 ------------------------------
 
-TODO: Add automatic test scripts for CoffeeScript compiler
+- [ ]TODO: Add automatic test scripts for CoffeeScript compiler
 
 The spec
 --------
 
 The source of [the spec] is `spec.txt`.  This is basically a Markdown
-file, with code examples written in a shorthand form:
+file.
+
+If the Markdown source does not contain CoffeeScript, we use the original 
+shorthand form:
 
     ```````````````````````````````` example
     Markdown source
     .
-    expected JavaScript code
+    expected HTML output
+
+If the Markdown source contains valid CoffeeScript syntax, the example should
+be written as:
+
+    ```````````````````````````````` example
+    Markdown source
+    @
+    expected JavaScript code (with --bare flag on)
+    ````````````````````````````````
+   ````````````````````````````````
+
+If the Markdown source does not contain any code, the expected output 
+should be empty:
+
+    ```````````````````````````````` example
+    No coffee for you
+    @
     ````````````````````````````````
 
-To build an HTML version of the spec, do `make spec.html`.  To build a
+Some valid Markdown source should be correctly parsed, but not necesserily 
+yeild leagal CoffeeScript syntax. The compiler should parse it correctly,
+then throw an error. Such case is written as:
+
+    ```````````````````````````````` example
+    Markdown source
+    !
+    expected error message
+    ````````````````````````````````
+
+<del>To build an HTML version of the spec, do `make spec.html`.  To build a
 PDF version, do `make spec.pdf`.  For both versions, you must
 have the lua rock `lcmark` installed:  after installing lua and
 lua rocks, `luarocks install lcmark`.  For the PDF you must also
-have xelatex installed.
+have xelatex installed.</del>
+
+- [ ]TODO: add build script that supports extends error spec
 
 The spec is written from the point of view of the human writer, not
 the computer reader.  It is not an algorithm---an English translation of
