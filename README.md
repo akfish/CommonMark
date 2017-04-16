@@ -24,21 +24,16 @@ There is a list of third-party libraries
 in a dozen different languages
 [here](https://github.com/jgm/CommonMark/wiki/List-of-CommonMark-Implementations).
 
+About this fork
+---------------
+
+The `LiterateCoffeeScript` branch contains a modified spec.
+It is intended for running automatic test of Literate CoffeeScript against the CommonMark spec.
+
 Running tests against the spec
 ------------------------------
 
-[The spec] contains over 500 embedded examples which serve as conformance
-tests. To run the tests using an executable `$PROG`:
-
-    python3 test/spec_tests.py --program $PROG
-
-If you want to extract the raw test data from the spec without
-actually running the tests, you can do:
-
-    python3 test/spec_tests.py --dump-tests
-
-and you'll get all the tests in JSON format.
-
+TODO: Add automatic test scripts for CoffeeScript compiler
 
 The spec
 --------
@@ -49,7 +44,7 @@ file, with code examples written in a shorthand form:
     ```````````````````````````````` example
     Markdown source
     .
-    expected HTML output
+    expected JavaScript code
     ````````````````````````````````
 
 To build an HTML version of the spec, do `make spec.html`.  To build a
