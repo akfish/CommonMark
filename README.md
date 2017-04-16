@@ -77,6 +77,9 @@ then throw an error. Such case is written as:
     expected error message
     ````````````````````````````````
 
+Note that **ALL** examples should be run against coffee compiler. The ones 
+without CoffeeScript should output empty result.
+
 <del>To build an HTML version of the spec, do `make spec.html`.  To build a
 PDF version, do `make spec.pdf`.  For both versions, you must
 have the lua rock `lcmark` installed:  after installing lua and
