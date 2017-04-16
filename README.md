@@ -41,13 +41,14 @@ The spec
 The source of [the spec] is `spec.txt`.  This is basically a Markdown
 file.
 
-If the Markdown source does not contain CoffeeScript, we use the original 
+If the Markdown source does not contain code blocks, we use the original 
 shorthand form:
 
     ```````````````````````````````` example
     Markdown source
     .
     expected HTML output
+    ````````````````````````````````
 
 If the Markdown source contains valid CoffeeScript syntax, the example should
 be written as:
@@ -57,10 +58,9 @@ be written as:
     @
     expected JavaScript code (with --bare flag on)
     ````````````````````````````````
-   ````````````````````````````````
 
-If the Markdown source does not contain any code, the expected output 
-should be empty:
+If the Markdown source contains empty code blocks, the expected output 
+could be empty:
 
     ```````````````````````````````` example
     No coffee for you
@@ -69,7 +69,7 @@ should be empty:
 
 Some valid Markdown source should be correctly parsed, but not necesserily 
 yeild leagal CoffeeScript syntax. The compiler should parse it correctly,
-then throw an error. Such case is written as:
+then throw compiler errors. Such case is written as:
 
     ```````````````````````````````` example
     Markdown source
