@@ -77,6 +77,22 @@ then throw compiler errors. Such case is written as:
     expected error message
     ````````````````````````````````
 
+To allow fine-grained control over the spec adaptation,
+a spec level tag can be specified:
+
+    ```````````````````````````````` example [spec_level]
+    Markdown source
+    @
+    expected JavaScript code (with --bare flag on)
+    ````````````````````````````````
+
+Possible values are:
+* `accepted` - This spec is accepted and will be enforced. 
+  Failing the test will result in an error. (default)
+* `proposed` - This spec is proposed but yet to be adapted by the compiler.
+  Failing the test will result in a warning.
+
+
 Note that **ALL** examples should be run against coffee compiler. The ones 
 without CoffeeScript should output empty result.
 

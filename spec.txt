@@ -1576,7 +1576,7 @@ PROPOSAL: Literate CoffeeScript should support fence code block
 
 Here is a simple example with backticks:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 <
  >
@@ -1588,7 +1588,7 @@ Error on line 1: unexpected &
 
 With tildes:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ~~~
 <
  >
@@ -1601,7 +1601,7 @@ Error on line 1: unexpected &
 The closing code fence must use the same character as the opening
 fence:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 coffee
 ~~~
@@ -1611,7 +1611,7 @@ Error on line 2: unexpected end of input
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ~~~
 aaa
 ```
@@ -1623,7 +1623,7 @@ Error on line 2: unexpected end of input
 
 The closing code fence must be at least as long as the opening fence:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ````
 aaa
 ```
@@ -1633,7 +1633,7 @@ Error on line 2: unexpected end of input
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ~~~~
 aaa
 ~~~
@@ -1646,13 +1646,13 @@ Error on line 2: unexpected end of input
 Unclosed code blocks are closed by the end of the document
 (or the enclosing [block quote][block quotes] or [list item][list items]):
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 @
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 `````
 
 ```
@@ -1662,7 +1662,7 @@ Error on line 1: unexpected `
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 > ```
 > coffee
 
@@ -1674,7 +1674,7 @@ coffee;
 
 A code block can have all empty lines as its content:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 
   
@@ -1685,7 +1685,7 @@ A code block can have all empty lines as its content:
 
 A code block can be empty:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 ```
 @
@@ -1696,7 +1696,7 @@ Fences can be indented.  If the opening fence is indented,
 content lines will have equivalent opening indentation removed,
 if present:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
  ```
  coffee1
 coffee2
@@ -1707,7 +1707,7 @@ coffee2;
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
   ```
 coffee1
   coffee2
@@ -1720,7 +1720,7 @@ coffee3;
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
    ```
    coffee1
     coffee2
@@ -1737,7 +1737,7 @@ coffee3;
 
 Four spaces indentation produces an indented code block:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
     ```
     wrong coffee
     ```
@@ -1753,7 +1753,7 @@ See following sections for alternative for embedding JavaScript.)
 Closing fences may be indented by 0-3 spaces, and their indentation
 need not match that of the opening fence:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 coffee
   ```
@@ -1762,7 +1762,7 @@ coffee;
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
    ```
 coffee
   ```
@@ -1773,7 +1773,7 @@ coffee;
 
 This is not a closing fence, because it is indented 4 spaces:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 wrong coffee
     ```
@@ -1785,14 +1785,14 @@ Error on line 2: unexpected indentation
 
 Code fences (opening and closing) cannot contain internal spaces:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ``` ```
 not coffee
 @
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ~~~~~~
 aaa
 ~~~ ~~
@@ -1804,7 +1804,7 @@ Error on line 2: unexpected end of input
 Fenced code blocks can interrupt paragraphs, and can be followed
 directly by paragraphs, without a blank line between:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 foo
 ```
 coffee
@@ -1818,7 +1818,7 @@ coffee;
 Other blocks can also occur before and after fenced code blocks
 without an intervening blank line:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 foo
 ---
 ~~~
@@ -1837,7 +1837,7 @@ with `language-`, is used as the value for the `class` attribute of the
 
 Other languages will not be compiled by CoffeeScript compiler:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```ruby
 def foo(x)
   return 3
@@ -1847,7 +1847,7 @@ end
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ~~~~    ruby startline=3 $%@#$
 def foo(x)
   return 3
@@ -1858,13 +1858,13 @@ end
 
 `coffee` or unspecified blocks will be compiled:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ````;
 ````
 @
 ````````````````````````````````
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 coffee ->
   script
@@ -1875,7 +1875,7 @@ coffee(function() {
 });
 ````````````````````````````````
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```coffee
 coffee ->
   script
@@ -1886,7 +1886,7 @@ coffee(function() {
 });
 ````````````````````````````````
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ~~~~    coffee startline=3 $%@#$
 coffee ->
   script
@@ -1899,7 +1899,7 @@ coffee(function() {
 
 `js` blocks will be embeded as-is:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```js
 js(function() {
   return script;
@@ -1915,7 +1915,7 @@ js(function() {
 
 [Info strings] for backtick code blocks cannot contain backticks:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ``` coffee ```
 foo
 @
@@ -1925,7 +1925,7 @@ coffee;
 
 Closing code fences cannot have [info strings]:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 ``` aaa
 ```
@@ -2898,7 +2898,7 @@ Error on line 1: missing / (unclosed regex)
 This is not a link reference definition, because it occurs inside
 a code block:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ```
 [foo]: /url
 ```
@@ -3300,7 +3300,7 @@ coffee2;
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 > ```
 foo
 ```
@@ -3742,7 +3742,7 @@ one blank line.
 
 A list item may contain any kind of block:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 1.  foo
 
     ```
@@ -3962,7 +3962,7 @@ the above case:
 
 Here are some list items that start with a blank line but are not empty:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 -
   foo
 -
@@ -4928,7 +4928,7 @@ with a blank line between them:
 
 This is a tight list, because the blank lines are in a code block:
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 - a
 - ```
   coffee
@@ -5188,7 +5188,7 @@ Error on line 1: unexpected \
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ~~~
 \[\]
 ~~~
@@ -5230,7 +5230,7 @@ link references, and [info strings] in [fenced code blocks]:
 ````````````````````````````````
 
 
-```````````````````````````````` example
+```````````````````````````````` example proposed
 ``` coffee\+bar
 not coffee, but coffee+bar language
 ```
