@@ -1,17 +1,31 @@
 {
-  "name": "commonmark-spec",
+  "name": "coffee-script-commonmark-spec",
   "version": "0.27.0",
-  "description": "CommonMark spec and test cases",
-  "homepage": "http://commonmark.org",
-  "license": "CC-BY-SA-4.0",
+  "description": "CommonMark spec and test cases for literate CoffeeScript",
   "keywords": [
     "commonmark",
-    "markdown"
+    "markdown",
+    "coffee"
   ],
+  "bin": {
+    "common-litcoffee": "bin/common-litcoffee.js"
+  },
+  "scripts": {
+    "build": "node_modules/.bin/coffee -o lib -mc src",
+    "dev": "node_modules/.bin/coffee -o lib -wmc src",
+    "prepublish": "npm run build"
+  },
   "repository": "jgm/CommonMark",
   "license": "MIT",
-  "files": [
-    "index.js",
-    "spec.txt"
-  ]
+  "main": "lib/index.js",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "chai": "^3.5.0",
+    "chalk": "^1.1.3",
+    "coffee-script": "^1.12.5",
+    "commander": "^2.9.0",
+    "lodash": "^4.17.4",
+    "markdown-it": "^8.3.1"
+  },
+  "devDependencies": {}
 }

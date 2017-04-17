@@ -33,7 +33,17 @@ It is intended for running automatic test of Literate CoffeeScript against the C
 Running tests against the spec
 ------------------------------
 
-- [ ]TODO: Add automatic test scripts for CoffeeScript compiler
+1. Clone this repo
+2. Run `npm install`
+3. Run `npm link`
+4. Run `common-litcoffee`
+
+The `common-litcoffee` command will try find CoffeeScript at:
+1. cwd
+2. cwd/node_modules/coffee-script
+3. Bundled `coffee-script`
+
+Run `common-litcoffee --help` for more information
 
 The spec
 --------
@@ -87,10 +97,11 @@ a spec level tag can be specified:
     ````````````````````````````````
 
 Possible values are:
-* `accepted` - This spec is accepted and will be enforced. 
-  Failing the test will result in an error. (default)
+* `pending` - This spec's status is not determined. (default)
 * `proposed` - This spec is proposed but yet to be adapted by the compiler.
   Failing the test will result in a warning.
+* `accepted` - This spec is accepted and will be enforced. 
+  Failing the test will result in an error.
 
 
 Note that **ALL** examples should be run against coffee compiler. The ones 
